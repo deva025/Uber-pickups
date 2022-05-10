@@ -36,6 +36,12 @@ plt.xlabel('days')
 plt.grid(color='black')
 plt.title('Day wise analysis', fontsize = 20)
 plt.show()
+plt.figure(figsize=(18, 14))
+plt.title('New York Uber Pickups from April to September 2014')
+map = Basemap(projection='merc', urcrnrlat=top, llcrnrlat=bottom, llcrnrlon=left, urcrnrlon=right)
+x, y = map(Longitudes, Latitudes)
+map.hexbin(x, y, gridsize=1000, bins='log', cmap=cm.inferno)
+map.colorbar(location='right', format='%.1f', label='Number of Pickups');
 print("The overall observation of the graph depicts that the highest no of trips was observed in day 30 however, day by day no of trips differ marginally.")
 print("the lowest no of trips is on 31st day because  April, June and September have 30 days.")
 
